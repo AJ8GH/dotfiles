@@ -61,7 +61,7 @@ rbenv install 2.7.4
 #=============
 # Other
 #=============
-brew_packages="kcat htop gotop httpie curl exa k6 ripgrep tmux pygments"
+brew_packages="kcat htop gotop httpie curl exa k6 ripgrep tmux pygments jq cowsay kafka bitwarden-cli"
 brew install ${brew_packages}
 
 #=============
