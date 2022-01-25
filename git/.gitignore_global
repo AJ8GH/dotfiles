@@ -40,6 +40,8 @@ target
 *.log
 *.sql
 *.sqlite
+**/log
+**/logs
 
 # OS generated files #
 ######################
