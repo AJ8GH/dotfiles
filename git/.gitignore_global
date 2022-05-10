@@ -75,3 +75,13 @@ desktop.ini
 ############################
 .java-version
 .jenv-version
+
+# Secret files #
+################
+*.pem
+*.cer
+*.der
+*.crt
+*.key
+*.key.2
+
