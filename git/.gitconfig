@@ -4,7 +4,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
-	excludesfile = /Users/adamjonas/.gitignore_global
+    excludesfile = /Users/adamjonas/.config/git/.gitignore_global
 [init]
 	defaultBranch = main
 [pull]

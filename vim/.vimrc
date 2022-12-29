@@ -4,6 +4,7 @@
 let MRU_File = '.vim/vim_mru_files'
 set runtimepath+=~/.vim/vim_runtime
 set viminfo+=n~/.vim/viminfo
+set rtp+=/usr/local/opt/fzf
 
 source ~/.vim/vim_runtime/vimrcs/basic.vim
 source ~/.vim/vim_runtime/vimrcs/filetypes.vim
