@@ -18,7 +18,7 @@
 
         <repository>
           <id>github</id>
-          <url>https://maven.pkg.github.com/aj8gh/repository</url>
+          <url>https://maven.pkg.github.com/aj8gh/checkstyle</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
