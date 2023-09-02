@@ -15,6 +15,10 @@
     {
       "key": "alt-a",
       "trigger": "workspace-tree/rename-file"
+    },
+    {
+      "key": "alt-cmd-l",
+      "trigger": "reformat-code"
     }
   ]
 }

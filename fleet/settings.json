@@ -1,6 +1,16 @@
 {
+    // Terminal
     "terminal.lineSpacing": 1.4,
     "terminal.fontFamily": "MesloLGS NF",
-    "autoSave": true,
-    "autoSave.delay": -1
+
+    // Editor
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "All",
+    "editor.formatOnSave": true,
+    "editor.guides": [80, 100],
+
+    // Languages
+    "[go]": {
+        "editor.indentStyle": "tabs",
+    },
 }
