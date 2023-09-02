@@ -1,0 +1,20 @@
+{
+  "keymap": [
+    {
+      "key": "alt-q",
+      "trigger": "toggle-terminal"
+    },
+    {
+      "key": "alt-k",
+      "trigger": "edit-keymap"
+    },
+    {
+      "key": "shift-cmd-n",
+      "trigger": "new-folder"
+    },
+    {
+      "key": "alt-a",
+      "trigger": "workspace-tree/rename-file"
+    }
+  ]
+}

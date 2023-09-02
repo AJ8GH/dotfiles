@@ -5,6 +5,7 @@
 	autocrlf = input
 	safecrlf = true
     excludesfile = /Users/adamjonas/.config/git/.gitignore_global
+	editor = /usr/local/bin/vim
 [init]
 	defaultBranch = main
 [pull]

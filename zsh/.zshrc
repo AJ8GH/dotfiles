@@ -228,6 +228,7 @@ alias vz="vim ~/.config/zsh/.zshrc"
 # Environment Variables
 #====================
 
+export PATH="/usr/local/sbin:$PATH"
 export GEM_HOME="$HOME/.config/ruby/gems"
 export NODE_REPL_HISTORY="$HOME/.config/node/.node_repl_history"
 # Grep Colors
