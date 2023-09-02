@@ -30,8 +30,8 @@ ZSH_HIGHLIGHT_STYLES[assign]='fg=123'
 
 # commands like echo git npm
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=119'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=218'
-ZSH_HIGHLIGHT_STYLES[global-alias]='fg=218'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=224'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=224'
 ZSH_HIGHLIGHT_STYLES[command]='fg=119'
 
 ZSH_HIGHLIGHT_STYLES[default]='fg=255'
