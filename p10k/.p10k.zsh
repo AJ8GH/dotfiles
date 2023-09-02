@@ -45,11 +45,14 @@
   c1=238
   c2=230
   c3=221
+  c4=222
+  c5=216
+  c6=121
 
   # VCS
-  clean_bg=121
-  modified_bg=221
-  untracked_bg=209
+  clean_bg=$c6
+  modified_bg=$c4
+  untracked_bg=$c5
   conflicted_bg=202
   loading_bg=$c1
   meta_fg=$c1

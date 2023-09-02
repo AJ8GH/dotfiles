@@ -35,3 +35,6 @@ alias brewdeps='brew leaves | xargs brew deps --include-build --tree'
 alias vz='vim ~/.config/zsh/.zshrc'
 alias fz='fleet ~/.config/zsh/zsh-config'
 alias cz='code ~/.config/zsh/zsh-config'
+
+# Editor Config
+alias ec='cp ~/.config/.editorconfig .'
