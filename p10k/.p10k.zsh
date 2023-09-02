@@ -12,6 +12,46 @@
 #
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
+
+  # ===== MY COLOURS =====
+
+  source /Users/adamjonas/.config/zsh/zsh-config/p10k_colours.zsh
+
+  # VCS
+  clean_bg=$CLEAN_BG
+  modified_bg=$MODIFIED_BG
+  untracked_bg=$UNTRACKED_BG
+  conflicted_bg=$CONFLICTED_BG
+  loading_bg=$LOADING_BG
+  meta_fg=$META_FG
+  clean_fg=$CLEAN_FG
+  modified_fg=$MODIFIED_FG
+  untracked_fg=$UNTRACKED_FG
+  conflicted_fg=$CONFLICTED_FG
+  vcs_fg=$VCS_FG
+
+  # OS Icon
+  os_bg=$OS_BG
+  os_fg=$OS_FG
+
+  # Current Directory
+  dir_bg=$DIR_BG
+  dir_fg=$DIR_FG
+
+  # Execution Time
+  exec_bg=$EXEC_BG
+  exec_fg=$EXEC_FG
+
+  # Context
+  context_bg=$CONTEXT_BG
+  context_fg=$CONTEXT_FG
+
+  # Current time
+  time_bg=$TIME_BG
+  time_fg=$TIME_FG
+
+  # ===================
+
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
 [[ ! -o 'aliases'         ]] || p10k_config_opts+=('aliases')
@@ -39,50 +79,6 @@
     newline                 # \n
     prompt_char             # prompt symbol
   )
-
-  # ===== MY COLOURS =====
-  # Base
-  c1=238
-  c2=230
-  c3=221
-  c4=222
-  c5=216
-  c6=121
-
-  # VCS
-  clean_bg=$c6
-  modified_bg=$c4
-  untracked_bg=$c5
-  conflicted_bg=202
-  loading_bg=$c1
-  meta_fg=$c1
-  clean_fg=$c1
-  modified_fg=$c1
-  untracked_fg=$c1
-  conflicted_fg=$c2
-  vcs_fg=$c1
-
-  # OS Icon
-  os_bg=$c2
-  os_fg=$c1
-
-  # Current Directory
-  dir_bg=$c1
-  dir_fg=$c2
-  
-  # Execution Time
-  exec_bg=$c2
-  exec_fg=$c1
-  
-  # Context
-  context_bg=$c1
-  contect_fg=$c2
-
-  # Current time
-  time_bg=$c2
-  time_fg=$c1
-
-  # ===================
 
   # The list of segments shown on the right. Fill it with less important segments.
   # Right prompt on the last prompt line (where you are typing your commands) gets
@@ -1774,4 +1770,3 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
-
