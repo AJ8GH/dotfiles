@@ -40,10 +40,47 @@
     prompt_char             # prompt symbol
   )
 
+  # ===== MY COLOURS =====
+  # Base
   c1=238
   c2=230
   c3=221
+
+  # VCS
+  clean_bg=121
+  modified_bg=221
+  untracked_bg=209
+  conflicted_bg=202
+  loading_bg=$c1
+  meta_fg=$c1
+  clean_fg=$c1
+  modified_fg=$c1
+  untracked_fg=$c1
+  conflicted_fg=$c2
+  vcs_fg=$c1
+
+  # OS Icon
+  os_bg=$c2
+  os_fg=$c1
+
+  # Current Directory
+  dir_bg=$c1
+  dir_fg=$c2
   
+  # Execution Time
+  exec_bg=$c2
+  exec_fg=$c1
+  
+  # Context
+  context_bg=$c1
+  contect_fg=$c2
+
+  # Current time
+  time_bg=$c2
+  time_fg=$c1
+
+  # ===================
+
   # The list of segments shown on the right. Fill it with less important segments.
   # Right prompt on the last prompt line (where you are typing your commands) gets
   # automatically hidden when the input line reaches it. Right prompt above the
@@ -188,8 +225,8 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$c1
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$c2
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$os_fg
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$os_bg
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
@@ -218,19 +255,19 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$c1
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$dir_bg
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$c3
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$dir_fg
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_from_right
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=$c3
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=$c2
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=$c3
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=$c2
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -357,11 +394,12 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=121
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=224
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=216
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=1
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=238
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$clean_bg
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$vcs_fg
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$modified_bg
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$untracked_bg
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=$conflicted_bg
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=$loading_bg
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -389,11 +427,11 @@
     fi
 
     # Styling for different parts of Git status.
-    local       meta='%7F' # white foreground
-    local      clean='%0F' # black foreground
-    local   modified='%0F' # black foreground
-    local  untracked='%0F' # black foreground
-    local conflicted='%7F' # white foreground
+    local       meta="%${meta_fg}F" # black foreground
+    local      clean="%${clean_fg}F" # black foreground
+    local   modified="%${modified_fg}F" # black foreground
+    local  untracked="%${untracked_fg}F" # black foreground
+    local conflicted="%${conflicted_fg}F" # white foreground
 
     local res
 
@@ -543,8 +581,8 @@
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$c1
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$c3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$exec_fg
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$exec_bg
   # Show duration of the last command if takes at least this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
   # Show this many fractional digits. Zero means round to seconds.
@@ -915,8 +953,8 @@
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=221
-  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=238
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=$context_fg
+  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=$context_bg
 
   # Context format when running with privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
@@ -1649,8 +1687,8 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=$c1
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND=$c2
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=$time_fg
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=$time_bg
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # If set to true, time will update when you hit enter. This way prompts for the past
