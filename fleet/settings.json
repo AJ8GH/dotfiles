@@ -1,0 +1,6 @@
+{
+    "terminal.lineSpacing": 1.4,
+    "terminal.fontFamily": "MesloLGS NF",
+    "autoSave": true,
+    "autoSave.delay": -1
+}
