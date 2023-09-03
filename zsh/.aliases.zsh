@@ -38,3 +38,5 @@ alias cz='code ~/.config/zsh/zsh-config'
 
 # Editor Config
 alias ec='cp ~/.config/.editorconfig .'
+
+# Git

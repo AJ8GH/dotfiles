@@ -5,6 +5,7 @@
 export PATH="/usr/local/sbin:$PATH"
 export GEM_HOME="$HOME/.config/ruby/gems"
 export NODE_REPL_HISTORY="$HOME/.config/node/.node_repl_history"
+
 # Grep Colors
 export GREP_COLORS='ms=01;33:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 

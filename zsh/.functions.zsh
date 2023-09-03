@@ -13,10 +13,23 @@ gacp() {
   git push
 }
 
+gafp() {
+  echo 'Amend last commit and force push? (y/n)'
+  read -r reply
+  if [[ $reply == 'y' ]]
+  then
+    git add .
+    git commit --amend -m "$1"
+    git push --force
+  else
+    echo 'Amend commit aborted'
+  fi
+}
+
 # Fleet
 nf() {
   mkdir "$1"
-  cd "$1"
+  cd "$1" || return
   cp ~/.config/.editorconfig .
   fleet .
 }

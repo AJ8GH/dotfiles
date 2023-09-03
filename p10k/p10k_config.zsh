@@ -41,3 +41,6 @@ export CONTEXT_FG=$c2
 # Current time
 export TIME_BG=$c2
 export TIME_FG=$c1
+
+# POWERLEVEL9K_INSTANT_PROMPT mode (verbose|quiet|off)
+export INSTANT_PROMPT_MODE=quiet

@@ -16,4 +16,5 @@
     "[go]": {
         "editor.indentStyle": "tabs",
     },
+    "editor.ligatures": false
 }

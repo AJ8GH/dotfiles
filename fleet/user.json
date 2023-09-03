@@ -19,6 +19,10 @@
     {
       "key": "alt-cmd-l",
       "trigger": "reformat-code"
+    },
+    {
+      "key": "shift-cmd-w",
+      "trigger": "close-window"
     }
   ]
 }

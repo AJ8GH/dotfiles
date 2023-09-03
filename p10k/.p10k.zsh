@@ -12,45 +12,50 @@
 #
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
+# ==============================================================================
+# ====================== #
+# ====== MY CONFIG ===== #
+# ====================== #
+source /Users/adamjonas/.config/zsh/zsh-config/p10k_config.zsh
 
-  # ===== MY COLOURS =====
+# ===== Colours =====
+# VCS
+clean_bg=$CLEAN_BG
+modified_bg=$MODIFIED_BG
+untracked_bg=$UNTRACKED_BG
+conflicted_bg=$CONFLICTED_BG
+loading_bg=$LOADING_BG
+meta_fg=$META_FG
+clean_fg=$CLEAN_FG
+modified_fg=$MODIFIED_FG
+untracked_fg=$UNTRACKED_FG
+conflicted_fg=$CONFLICTED_FG
+vcs_fg=$VCS_FG
 
-  source /Users/adamjonas/.config/zsh/zsh-config/p10k_colours.zsh
+# OS Icon
+os_bg=$OS_BG
+os_fg=$OS_FG
 
-  # VCS
-  clean_bg=$CLEAN_BG
-  modified_bg=$MODIFIED_BG
-  untracked_bg=$UNTRACKED_BG
-  conflicted_bg=$CONFLICTED_BG
-  loading_bg=$LOADING_BG
-  meta_fg=$META_FG
-  clean_fg=$CLEAN_FG
-  modified_fg=$MODIFIED_FG
-  untracked_fg=$UNTRACKED_FG
-  conflicted_fg=$CONFLICTED_FG
-  vcs_fg=$VCS_FG
+# Current Directory
+dir_bg=$DIR_BG
+dir_fg=$DIR_FG
 
-  # OS Icon
-  os_bg=$OS_BG
-  os_fg=$OS_FG
+# Execution Time
+exec_bg=$EXEC_BG
+exec_fg=$EXEC_FG
 
-  # Current Directory
-  dir_bg=$DIR_BG
-  dir_fg=$DIR_FG
+# Context
+context_bg=$CONTEXT_BG
+context_fg=$CONTEXT_FG
 
-  # Execution Time
-  exec_bg=$EXEC_BG
-  exec_fg=$EXEC_FG
+# Current time
+time_bg=$TIME_BG
+time_fg=$TIME_FG
 
-  # Context
-  context_bg=$CONTEXT_BG
-  context_fg=$CONTEXT_FG
+# ===== Instant Prompt =====
+instant_prompt_mode=$INSTANT_PROMPT_MODE
 
-  # Current time
-  time_bg=$TIME_BG
-  time_fg=$TIME_FG
-
-  # ===================
+# ==============================================================================
 
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
@@ -1752,7 +1757,8 @@
   #   - verbose: Enable instant prompt and print a warning when detecting console output during
   #              zsh initialization. Choose this if you've never tried instant prompt, haven't
   #              seen the warning, or if you are unsure what this all means.
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=$instant_prompt_mode
 
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload
