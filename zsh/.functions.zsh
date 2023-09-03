@@ -7,6 +7,11 @@ printColors() {
 }
 
 # Git
+gac() {
+  git add .
+  git commit -m "$1"
+}
+
 gacp() {
   git add .
   git commit -m "$1"
@@ -26,6 +31,15 @@ gafp() {
   fi
 }
 
+gre() {
+  n="$1"
+  if [[ -z "$n" ]]
+  then
+    n='1'
+  fi
+  git reset HEAD~"${n}"
+}
+
 # Fleet
 nf() {
   mkdir "$1"
@@ -33,3 +47,4 @@ nf() {
   cp ~/.config/.editorconfig .
   fleet .
 }
+
