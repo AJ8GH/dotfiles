@@ -24,7 +24,13 @@ gafp() {
   if [[ $reply == 'y' ]]
   then
     git add .
-    git commit --amend -m "$1"
+    msg="$1"
+    if [[ -z "$msg" ]]
+    then
+      git commit --amend --no-edit
+    else
+      git commit --amend -m "$1"
+    fi
     git push --force
   else
     echo 'Amend commit aborted'
