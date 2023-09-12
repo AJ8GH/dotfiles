@@ -1,0 +1,150 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.rulers": [80],
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#2a2a2a",
+    "[Default Dark+]": {
+      "statusBar.background": "#2a2a2a",
+    }
+  },
+
+  "workbench.editor.decorations.colors": true,
+  "editor.renderWhitespace": "all",
+  "code-runner.saveAllFilesBeforeRun": true,
+  "files.trimFinalNewlines": true,
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  "settings.cycle": [
+    {
+      "id": "lineNumbers",
+      "values": [
+        {
+          "editor.lineNumbers": "off",
+          "editor.folding": "off",
+          "editor.glyphMargin": "off"
+        },
+        {
+          "editor.lineNumbers": "on",
+          "editor.folding": "on",
+          "editor.glyphMargin": "on"
+        }
+      ]
+    }
+  ],
+
+  "editor.lineNumbers": "on",
+  "editor.folding": "on",
+  "editor.glyphMargin": "on",
+  "liveServer.settings.donotVerifyTags": true,
+  "settingsSync.ignoredSettings": ["-window.zoomLevel"],
+
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
+  },
+  "[java]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[ruby]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "ruby": "html"
+  },
+  "ruby.specClearTerminal": false,
+  "ruby.specSaveFile": true,
+  "customWindowZoom.zoomLevelChangeValue": 0.25,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "react-native.packager.port": 19001,
+  "macColorPicker.defaultColorNotation": "hex", // Which notation to use when inserting (rather than updating) a color
+  "macColorPicker.lowercaseHexColors": true, // Output hex colors in lowercase, e.g.: `#fff` instead of `#FFF`
+  "macColorPicker.shortHexColors": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    "*.csv": "csv",
+    "Pipfile": "pip-requirements"
+},
+"workbench.iconTheme": "material-icon-theme",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "aws.profile": "profile:lab",
+  "json.schemas": [],
+  "editor.fontLigatures": null, // Shorten hex colors when possible, e.g.: `#777` instead of `#777777`
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.enableBold": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.rightClickCopyPaste": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "cSpell.language": "en-GB",
+  "git.confirmSync": false,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.preview": true,
+  "editor.acceptSuggestionOnEnter": "on",
+"editor.snippetSuggestions": "top",
+  // Bracket-pair Highlighting
+  "editor.bracketPairColorization.enabled": false,
+  // Bracket-pair guides
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.highlightActiveBracketPair": false,
+  // Indentation guides
+  // "editor.guides.indentation": false,
+  "editor.guides.highlightActiveIndentation": true,
+  "git.autofetch": true,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "git.enableSmartCommit": true,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "go.toolsManagement.autoUpdate": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "window.zoomLevel": 0.25
+}

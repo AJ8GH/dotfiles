@@ -1,0 +1,435 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "alt+n",
+    "command": "explorer.newFolder"
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+;",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "alt+tab",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "cmd+k z",
+    "command": "-workbench.action.toggleZenMode"
+  },
+  {
+    "key": "alt+shift+s",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "alt+r",
+    "command": "code-runner.run"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "-code-runner.run"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "workbench.action.files.saveAs"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "saveAll"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "-saveAll"
+  },
+  {
+    "key": "ctrl+cmd+s",
+    "command": "workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "breadcrumbs.toggle"
+  },
+  {
+    "key": "shift+alt+m",
+    "command": "editor.action.toggleMinimap"
+  },
+  {
+    "key": "cmd+l",
+    "command": "settings.cycle.lineNumbers"
+  },
+  {
+    "key": "alt+shift+w",
+    "command": "workbench.action.toggleTabsVisibility"
+  },
+  {
+    "key": "alt+shift+w",
+    "command": "-workbench.action.toggleTabsVisibility"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "cmd+shift+'",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "shift+alt+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+q",
+    "command": "extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+=",
+    "command": "extension.customWindowZoomIn"
+  },
+  {
+    "key": "cmd+9",
+    "command": "-extension.customWindowZoomIn"
+  },
+  {
+    "key": "cmd+-",
+    "command": "extension.customWindowZoomOut"
+  },
+  {
+    "key": "cmd+8",
+    "command": "-extension.customWindowZoomOut"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+down",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+up",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+'",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported"
+  },
+  {
+    "command": "extension.runFileSpecs",
+    "title": "Run File Specs",
+    "key": "alt+'"
+  },
+  {
+    "command": "extension.runSpecLine",
+    "title": "Run Spec Line",
+    "key": "alt+l"
+  },
+  {
+    "command": "extension.runLastSpec",
+    "title": "Run Last Spec",
+    "key": "alt+;"
+  },
+  {
+    "key": "alt+0",
+    "command": "workbench.action.zoomReset"
+  },
+  {
+    "key": "cmd+numpad0",
+    "command": "-workbench.action.zoomReset"
+  },
+  {
+    "key": "alt+\\",
+    "command": "erb.toggleTags",
+    "when": "editorTextFocus && editorLangId == erb"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-extension.runFileSpecs"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "extension.macColorPicker"
+  },
+  {
+    "key": "ctrl+cmd+r",
+    "command": "extension.runAllSpecFiles"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-extension.runAllSpecFiles"
+  },
+  {
+    "key": "m m",
+    "command": "jupyter.changeCellToMarkdown",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+; m",
+    "command": "-jupyter.changeCellToMarkdown",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "c c",
+    "command": "jupyter.changeCellToCode",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+; c",
+    "command": "-jupyter.changeCellToCode",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+x",
+    "command": "jupyter.deleteCells",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+; x",
+    "command": "-jupyter.deleteCells",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+]",
+    "command": "jupyter.gotoNextCellInFile",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+alt+]",
+    "command": "-jupyter.gotoNextCellInFile",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+[",
+    "command": "jupyter.gotoPrevCellInFile",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+alt+[",
+    "command": "-jupyter.gotoPrevCellInFile",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+s",
+    "command": "jupyter.selectCell",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+shift+alt+\\",
+    "command": "-jupyter.selectCell",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+e",
+    "command": "jupyter.selectCellContents",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+alt+\\",
+    "command": "-jupyter.selectCellContents",
+    "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+d",
+    "command": "notebook.cell.delete",
+    "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+  },
+  {
+    "key": "d d",
+    "command": "-notebook.cell.delete",
+    "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "workbench.userDataSync.actions.syncNow"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.panel.testResults.view.focus"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "markdown.extension.editing.toggleStrikethrough",
+    "when": "false"
+  },
+  {
+    "key": "alt+s",
+    "command": "-markdown.extension.editing.toggleStrikethrough",
+    "when": "false"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "alt+]",
+    "command": "editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+[",
+    "command": "editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  {
+    "key": "shift+cmd+u",
+    "command": "-workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  {
+    "key": "alt+d",
+    "command": "workbench.debug.action.toggleRepl",
+    "when": "workbench.panel.repl.view.active"
+  },
+  {
+    "key": "shift+cmd+y",
+    "command": "-workbench.debug.action.toggleRepl",
+    "when": "workbench.panel.repl.view.active"
+  },
+  {
+    "key": "alt+w",
+    "command": "git.openChange"
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.view.extensions"
+  }
+]
