@@ -74,7 +74,8 @@
   },
   "[markdown]": {
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "emmet.includeLanguages": {
     "erb": "html",
@@ -146,5 +147,5 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "window.zoomLevel": 0.25
+  "window.zoomLevel": 0.5
 }

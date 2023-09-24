@@ -29,7 +29,7 @@ gafp() {
     then
       git commit --amend --no-edit
     else
-      git commit --amend -m "$1"
+      git commit --amend -m "$msg"
     fi
     git push --force
   else
@@ -53,4 +53,3 @@ nf() {
   cp ~/.config/.editorconfig .
   fleet .
 }
-
