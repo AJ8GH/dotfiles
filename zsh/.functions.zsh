@@ -53,3 +53,8 @@ nf() {
   cp ~/.config/.editorconfig .
   fleet .
 }
+
+trash() {
+  file="$1"
+  trash="mv -f $file ~/.Trash/"
+}

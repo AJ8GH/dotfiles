@@ -13,11 +13,10 @@ alias lch='exa -alt changed'
 alias lta='exa -alt accessed'
 alias la='exa -la'
 
-alias trash='mv -f ~/.Trash'
 alias mv='mv -i'
 
 # cat & less with colour
-alias cat='ccat'
+# alias cat='ccat' - this breaks sdkman
 alias less='cless'
 
 # Pretty print the path
