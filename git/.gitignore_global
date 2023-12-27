@@ -3,6 +3,10 @@
 node_modules
 **/node_modules
 
+# Build Tools #
+###############
+.gradle
+
 # Coverage #
 ############
 .coverage
@@ -19,6 +23,7 @@ node_modules
 *.pyo
 *.out
 target
+build
 
 # Packages #
 ############
@@ -74,6 +79,7 @@ desktop.ini
 ############################
 .java-version
 .jenv-version
+.sdkmanrc
 
 # Secret files #
 ################

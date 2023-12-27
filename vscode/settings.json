@@ -147,5 +147,8 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "window.zoomLevel": 0.5
+  "window.zoomLevel": 1.25,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

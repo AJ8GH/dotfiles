@@ -32,7 +32,8 @@ alias localip='ipconfig getifaddr en0'
 alias brewdeps='brew leaves | xargs brew deps --include-build --tree'
 
 # ZSH
-alias vz='vim ~/.config/zsh/.zshrc'
+alias vzrc='vim ~/.config/zsh/.zshrc'
+alias vz='vim ~/.config/zsh/zsh-config'
 alias fz='fleet ~/.config/zsh/zsh-config'
 alias cz='code ~/.config/zsh/zsh-config'
 
