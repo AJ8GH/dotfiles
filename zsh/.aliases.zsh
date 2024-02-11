@@ -15,6 +15,8 @@ alias la='exa -la'
 
 alias mv='mv -i'
 
+alias aoc-jar='kotlin lib/build/libs/lib.jar'
+
 # cat & less with colour
 # alias cat='ccat' - this breaks sdkman
 alias less='cless'
