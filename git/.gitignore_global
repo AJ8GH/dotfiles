@@ -6,6 +6,7 @@ node_modules
 # Build Tools #
 ###############
 .gradle
+.kotlin
 
 # Coverage #
 ############
@@ -74,6 +75,7 @@ desktop.ini
 *.sublime-workspace
 **/*.iml
 *.iml
+__debug_bin*
 
 # Version management files #
 ############################

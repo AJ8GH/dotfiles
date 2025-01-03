@@ -2,43 +2,43 @@
   "keymap": [
     {
       "key": "alt-q",
-      "trigger": "toggle-terminal"
+      "action": "terminal/toggle"
     },
     {
       "key": "alt-k",
-      "trigger": "edit-keymap"
+      "action": "open-keymap"
     },
     {
       "key": "shift-cmd-n",
-      "trigger": "new-folder"
+      "action": "new-folder"
     },
     {
       "key": "alt-a",
-      "trigger": "workspace-tree/rename-file"
+      "action": "files/rename"
     },
     {
       "key": "alt-cmd-l",
-      "trigger": "reformat-code"
+      "action": "reformat-code"
     },
     {
       "key": "shift-cmd-w",
-      "trigger": "close-window"
+      "action": "close-window"
     },
     {
       "key": "alt-c",
-      "trigger": "git/commit"
+      "action": "git/commit/jump-to-tool"
     },
     {
       "key": "alt-tab",
-      "trigger": "jump-to-files-tree"
+      "action": "jump-to-files-tree"
     },
     {
       "key": "alt-h",
-      "trigger": "git/jump-to-history"
+      "action": "git/history/jump-to-tool"
     },
     {
       "key": "shift-alt-q",
-      "trigger": "new-terminal"
+      "action": "terminal/new-tool"
     }
   ]
 }

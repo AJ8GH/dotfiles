@@ -1,21 +1,25 @@
 #==========#
-# Aliasses #
+# Aliases #
 #==========#
 
+alias idea=idea1
+alias vim=nvim
 alias pc='printColors'
 alias c='clear'
 
 # ls with colour
-alias ll='exa -al -h'
-alias lm='exa -alt modified'
-alias lc='exa -alt created'
-alias lch='exa -alt changed'
-alias lta='exa -alt accessed'
-alias la='exa -la'
+alias ll='exa -al -h --time-style=long-iso'
+alias lm='exa -alt modified --time-style=long-iso'
+alias lc='exa -alt created --time-style=long-iso'
+alias lch='exa -alt changed --time-style=long-iso'
+alias lta='exa -alt accessed --time-style=long-iso'
+alias la='exa -la --time-style=long-iso'
 
 alias mv='mv -i'
 
 alias aoc-jar='kotlin lib/build/libs/lib.jar'
+alias aoc2='kotlin /Users/adamjonas/.config/.aoc/jars/current.jar'
+alias aoc='aoc2'
 
 # cat & less with colour
 # alias cat='ccat' - this breaks sdkman
@@ -42,3 +46,4 @@ alias cz='code ~/.config/zsh/zsh-config'
 alias ec='cp ~/.config/.editorconfig .'
 
 # Git
+alias gpl='git pull'

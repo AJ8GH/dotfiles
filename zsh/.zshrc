@@ -110,7 +110,10 @@ autoload -U compinit && compinit
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# set -o vi
+
 source /Users/adamjonas/.config/zsh/zsh-config/.style.zsh
 source /Users/adamjonas/.config/zsh/zsh-config/.aliases.zsh
 source /Users/adamjonas/.config/zsh/zsh-config/.functions.zsh
 source /Users/adamjonas/.config/zsh/zsh-config/.variables.zsh
+
