@@ -84,6 +84,7 @@ plugins=(
     zsh-completions
     colorize
     colored-man-pages
+    fzf
 )
 
 # Colorize config
@@ -112,6 +113,12 @@ autoload -U compinit && compinit
 
 # set -o vi
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source /Users/adamjonas/.config/zsh/zsh-config/.style.zsh
 source /Users/adamjonas/.config/zsh/zsh-config/.aliases.zsh
 source /Users/adamjonas/.config/zsh/zsh-config/.functions.zsh
@@ -119,3 +126,4 @@ source /Users/adamjonas/.config/zsh/zsh-config/.variables.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+

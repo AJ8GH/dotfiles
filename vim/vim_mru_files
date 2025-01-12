@@ -1,4 +1,6 @@
 # Most recently edited files in Vim (version 3.0)
+/Users/adamjonas/.config/nvim/after/plugin/nvim-tree.lua
+/Users/adamjonas/.config/zsh/.zshrc
 /Users/adamjonas/.config/zsh/zsh-config/.aliases.zsh
 /Users/adamjonas/Projects/aoc-go/year-24/day-1/day1.go
 /Users/adamjonas/.config/nvim/init.vim
@@ -28,7 +30,6 @@
 /Users/adamjonas/.sdkman/etc/config
 /Users/adamjonas/.sdkman/var/platform
 /Users/adamjonas/Downloads/suppressions_1_2.dtd
-/Users/adamjonas/.config/zsh/.zshrc
 /Users/adamjonas/.config/.aoc/template/kt/test.txt
 /Users/adamjonas/.config/.aoc/template/kt/main.txt
 /Users/adamjonas/Projects/auto-py/.gitignore
