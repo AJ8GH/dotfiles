@@ -38,6 +38,8 @@ return {
         "bashls",
         "groovyls",
         "marksman",
+        "ts_ls",
+        "yamlls",
       },
       automatic_installation = true,
     })
@@ -49,6 +51,7 @@ return {
         "gofumpt",
         "checkstyle",
         "google-java-format",
+        "delve", -- go debugger
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "isort", -- python formatter

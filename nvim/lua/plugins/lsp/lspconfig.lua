@@ -93,7 +93,7 @@ return {
           Lua = {
             -- make the language server recognize "vim" global
             diagnostics = {
-              globals = { "vim" },
+              -- globals = { "vim" },
             },
             completion = {
               callSnippet = "Replace",
@@ -104,8 +104,8 @@ return {
 
       lspconfig.gopls.setup({
         capabilities = capabilities,
-        cmd = {"gopls"},
-        filetypes = {"go", "gomod", "gowork", "gotmpl"},
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
         root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
         settings = {
           gopls = {
@@ -118,6 +118,14 @@ return {
       lspconfig.jsonls.setup({}),
       lspconfig.yamlls.setup({}),
       lspconfig.jdtls.setup({}),
+      lspconfig.marksman.setup({}),
+      lspconfig.groovyls.setup({}),
+      lspconfig.bashls.setup({}),
+      lspconfig.sqls.setup({}),
+      lspconfig.html.setup({}),
+      lspconfig.cssls.setup({}),
+      lspconfig.ts_ls.setup({}),
+      lspconfig.pyright.setup({}),
     })
   end,
 }
