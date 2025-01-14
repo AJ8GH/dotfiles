@@ -1,13 +1,12 @@
 return {
   "karb94/neoscroll.nvim",
   config = function()
-    neoscroll = require("neoscroll")
+    local neoscroll = require("neoscroll")
     neoscroll.setup({
       -- Default easing function used in any animation where
       -- the `easing` argument has not been explicitly supplied
       easing = "quadratic",
     })
-    local thingPaching = 0
     local keymap = {
       -- Use the "sine" easing function
       ["<C-u>"] = function()
@@ -21,11 +20,11 @@ return {
       -- Use the "circular" easing function
       ["<C-b>"] = function()
         neoscroll.ctrl_b({ duration = 450, easing = "circular" })
-        vim.cmd("norm! zz")
+        -- vim.cmd("norm! zz")
       end,
       ["<C-f>"] = function()
         neoscroll.ctrl_f({ duration = 450, easing = "circular" })
-        vim.cmd("norm! zz")
+        -- vim.cmd("norm! zz")
       end,
       -- When no value is passed the `easing` option supplied in `setup()` is used
       ["<C-y>"] = function()

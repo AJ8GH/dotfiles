@@ -32,6 +32,8 @@ vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.list = true
-vim.opt.listchars='space:·,tab:→ '
+vim.opt.listchars = "space:·,tab:→ "
 
--- vim.o.autowriteall = true
+vim.opt.wildmenu = true
+vim.o.wildmode = "longest,list:longest,full"
+vim.o.wildoptions = "fuzzy"
