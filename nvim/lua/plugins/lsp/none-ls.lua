@@ -1,4 +1,4 @@
-local out = {
+return {
   "nvimtools/none-ls.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -44,5 +44,3 @@ local out = {
     })
   end,
 }
-
-return out
