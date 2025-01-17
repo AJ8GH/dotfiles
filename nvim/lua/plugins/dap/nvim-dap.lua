@@ -55,7 +55,7 @@ return {
       types_enabled = not types_enabled
       ui.update_render({ max_type_length = types_enabled and -1 or 0 })
     end
-    vim.keymap.set("n", "<leader>ut", toggle_types)
+    vim.keymap.set("n", "<leader>ut", toggle_types, { desc = "Toggle types in dap ui" })
     dap.listeners.before.attach.dapui_config = function()
       ui.open()
       toggle_types()
