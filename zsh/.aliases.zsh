@@ -5,6 +5,7 @@
 alias idea=idea1
 alias pc='printColors'
 alias c='clear'
+alias tt="open . -a 'iterm M1'"
 
 # vim
 alias v='vim .'
@@ -27,7 +28,7 @@ alias aoc='aoc2'
 
 # cat & less with colour
 # alias cat='ccat' - this breaks sdkman
-alias less='cless'
+# alias less='cless'
 
 # Pretty print the path
 # alias path='echo $PATH | tr -s ":" "\n"'

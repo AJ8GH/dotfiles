@@ -58,3 +58,9 @@ trash() {
   file="$1"
   trash="mv -f $file ~/.Trash/"
 }
+
+# Render markdown file and pipe to less
+rmd() {
+  file="$1"
+  glow $file -p -s dracula
+}

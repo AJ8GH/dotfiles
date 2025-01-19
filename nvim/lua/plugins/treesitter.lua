@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   dependencies = {
+    "LiadOz/nvim-dap-repl-highlights",
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     {
       "nvim-treesitter/nvim-treesitter-context",
@@ -23,6 +24,7 @@ return {
     },
   },
   config = function()
+    require("nvim-dap-repl-highlights").setup()
     require("nvim-treesitter.configs").setup({
       -- A list of parser names, or "all" (the listed parsers MUST always be installed)
       modules = {},
@@ -52,6 +54,7 @@ return {
         "yaml",
         "regex",
         "csv",
+        "dap_repl",
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
