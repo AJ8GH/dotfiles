@@ -1,1 +1,1 @@
-return require("plugins.color.nightfox")
+return require("plugins.color.gruvbox-material")
