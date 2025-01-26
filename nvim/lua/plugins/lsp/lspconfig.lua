@@ -65,6 +65,12 @@ return {
         opts.desc = "Show signature help for method under cursor"
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 
+        opts.desc = "Show signature help for method under cursor in insert mode"
+        vim.keymap.set("i", "<C-p>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+
+        opts.desc = "Show signature help for method under cursor in insert mode"
+        vim.keymap.set("i", "<C-1>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+
         vim.keymap.set("n", "<leader>rf", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
