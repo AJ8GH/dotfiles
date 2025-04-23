@@ -8,7 +8,7 @@ alias c='clear'
 alias tt="open . -a 'iterm M1'"
 
 # vim
-alias v='vim .'
+alias v='vim'
 alias vim='nvim'
 alias vv='cd $XDG_CONFIG_HOME/nvim && vim .'
 
