@@ -58,7 +58,10 @@ return {
         "black", -- python formatter
         "pylint",
         "eslint_d",
+        -- "sleek",
+        -- "sqlfmt",
       },
+      automatic_installation = true,
     })
   end,
 }

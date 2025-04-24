@@ -131,7 +131,7 @@ return {
       lspconfig.marksman.setup({}),
       lspconfig.groovyls.setup({}),
       lspconfig.bashls.setup({}),
-      lspconfig.sqls.setup({}),
+      -- lspconfig.sqls.setup({}),
       lspconfig.html.setup({}),
       lspconfig.cssls.setup({}),
       lspconfig.ts_ls.setup({}),

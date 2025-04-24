@@ -26,8 +26,13 @@ return {
         fmt.golines,
         fmt.stylua,
         fmt.prettier,
+        -- python
         fmt.black,
         fmt.isort,
+        -- sql
+        -- fmt.sqlfmt,
+        -- fmt.sleek,
+        -- fmt.sql_formatter.with({ command = { "sleek" } }),
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

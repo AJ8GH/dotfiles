@@ -19,3 +19,4 @@ export LESSHISTFILE="$XDG_CONFIG_HOME"
 export NETRC="$XDG_CONFIG/.netrc"
 # export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
+. "$HOME/.cargo/env"
