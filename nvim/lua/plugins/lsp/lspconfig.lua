@@ -4,14 +4,10 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
-
-    -- import mason_lspconfig plugin
-    local mason_lspconfig = require("mason-lspconfig")
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -85,58 +81,83 @@ return {
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+      -- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+      vim.diagnostic.config({ signs = { text = icon, texthl = hl, numhl = "" } })
     end
 
-    mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
+    -- configure lua server (with special settings)
+    vim.lsp.config("lua_ls", {
+      on_init = function(client)
+        if client.workspace_folders then
+          local path = client.workspace_folders[1].name
+          if
+            path ~= vim.fn.stdpath("config")
+            and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+          then
+            return
+          end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+          runtime = {
+            -- Tell the language server which version of Lua you're using (most
+            -- likely LuaJIT in the case of Neovim)
+            version = "LuaJIT",
+            -- Tell the language server how to find Lua modules same way as Neovim
+            -- (see `:h lua-module-load`)
+            path = {
+              "lua/?.lua",
+              "lua/?/init.lua",
+            },
+          },
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+              -- Depending on the usage, you might want to add additional paths
+              -- here.
+              -- '${3rd}/luv/library'
+              -- '${3rd}/busted/library'
+            },
+            -- Or pull in all of 'runtimepath'.
+            -- NOTE: this is a lot slower and will cause issues when working on
+            -- your own configuration.
+            -- See https://github.com/neovim/nvim-lspconfig/issues/3189
+            -- library = {
+            --   vim.api.nvim_get_runtime_file('', true),
+            -- }
+          },
         })
       end,
-
-      -- configure lua server (with special settings)
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            -- make the language server recognize "vim" global
-            diagnostics = {
-              -- globals = { "vim" },
-            },
-            completion = {
-              callSnippet = "Replace",
-            },
-          },
-        },
-      }),
-
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        cmd = { "gopls" },
-        filetypes = { "go", "gomod", "gowork", "gotmpl" },
-        root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
-        settings = {
-          gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-          },
-        },
-      }),
-
-      lspconfig.jsonls.setup({}),
-      lspconfig.yamlls.setup({}),
-      lspconfig.jdtls.setup({}),
-      lspconfig.marksman.setup({}),
-      lspconfig.groovyls.setup({}),
-      lspconfig.bashls.setup({}),
-      -- lspconfig.sqls.setup({}),
-      lspconfig.html.setup({}),
-      lspconfig.cssls.setup({}),
-      lspconfig.ts_ls.setup({}),
-      lspconfig.pyright.setup({}),
+      settings = {
+        Lua = {},
+      },
     })
+    lspconfig.gopls.setup({
+      capabilities = capabilities,
+      cmd = { "gopls" },
+      filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+      settings = {
+        gopls = {
+          completeUnimported = true,
+          usePlaceholders = true,
+        },
+      },
+    })
+
+    lspconfig.jsonls.setup({})
+    lspconfig.yamlls.setup({})
+    lspconfig.jdtls.setup({})
+    lspconfig.marksman.setup({})
+    lspconfig.groovyls.setup({})
+    lspconfig.bashls.setup({})
+    -- lspconfig.sqls.setup({})
+    lspconfig.html.setup({})
+    lspconfig.cssls.setup({})
+    lspconfig.ts_ls.setup({})
+    lspconfig.pyright.setup({})
   end,
 }
 
