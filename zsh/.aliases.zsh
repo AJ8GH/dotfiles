@@ -2,7 +2,7 @@
 # Aliases #
 #==========#
 
-alias idea=idea1
+# alias idea=idea1
 alias pc='printColors'
 alias c='clear'
 alias tt="open . -a 'iterm M1'"
@@ -53,3 +53,7 @@ alias ec='cp ~/.config/.editorconfig .'
 
 # Git
 alias gpl='git pull'
+
+# Disk space
+alias cleanup="sh /Users/adamjonas/Projects/dotfiles/scripts/cleanup.sh"
+alias storage="sh /Users/adamjonas/Projects/dotfiles/scripts/storage-report.sh"

@@ -82,6 +82,7 @@ __debug_bin*
 .java-version
 .jenv-version
 .sdkmanrc
+.python-version
 
 # Secret files #
 ################
@@ -92,3 +93,6 @@ __debug_bin*
 *.key
 *.key.2
 
+# JVM generated files #
+#######################
+*.hprof

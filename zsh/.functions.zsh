@@ -64,3 +64,7 @@ rmd() {
   file="$1"
   glow $file -p -s dracula
 }
+
+free-space() {
+  df -g / | awk 'NR==2 {print $4 " GB"}'
+}
