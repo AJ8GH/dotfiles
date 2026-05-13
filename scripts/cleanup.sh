@@ -11,7 +11,7 @@ free_space_bytes() {
 }
 
 free_space_human() {
-  df -h / | awk 'NR==2 {print $4}'
+  diskutil info / | awk '/Free Space/ {print $4, $5}'
 }
 
 clean() {
@@ -67,10 +67,11 @@ clean "Xcode DerivedData"      ~/Library/Developer/Xcode/DerivedData
 clean "Xcode Archives"         ~/Library/Developer/Xcode/Archives
 clean "Xcode iOS Device Logs"  ~/Library/Developer/Xcode/iOS\ Device\ Logs
 
-if command -v xcrun &>/dev/null; then
-  echo "Clearing unavailable simulators..."
+SIM_DIR="$HOME/Library/Developer/CoreSimulator/Devices"
+if [ -d "$SIM_DIR" ]; then
+  echo "Clearing all Xcode simulators..."
   before=$(free_space_bytes)
-  xcrun simctl delete unavailable 2>/dev/null
+  rm -rf "$SIM_DIR"/* 2>/dev/null
   after=$(free_space_bytes)
   freed=$(( (after - before) * 512 ))
   if [ "$freed" -gt 0 ]; then
@@ -115,10 +116,16 @@ fi
 # Docker
 # ─────────────────────────────────────────────
 
-if command -v docker &>/dev/null && docker info &>/dev/null 2>&1; then
+if command -v docker &>/dev/null; then
   echo "Pruning Docker (stopped containers, dangling images, unused networks)..."
   before=$(free_space_bytes)
-  docker system prune -f 2>/dev/null
+  rm -rf ~/Library/Containers/com.docker.docker/Data/log/* 2>/dev/null
+  rm -f ~/Library/Containers/com.docker.docker/Data/default.profraw 2>/dev/null
+  if docker info &>/dev/null 2>&1; then
+    docker system prune -f 2>/dev/null
+  else
+    echo "  (Docker daemon not running, skipping prune)"
+  fi
   after=$(free_space_bytes)
   freed=$(( (after - before) * 512 ))
   if [ "$freed" -gt 0 ]; then

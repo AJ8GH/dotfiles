@@ -33,7 +33,7 @@ report() {
 echo "📊 macOS Storage Report"
 echo "========================"
 echo ""
-echo "Free space: $(df / | awk 'NR==2 {printf "%.2f GB", $4 * 512 / 1073741824}')"
+echo "Free space: $(diskutil info / | awk '/Free Space/ {print $4, $5}')"
 echo ""
 
 echo "── User Caches & Logs ──────────────────────────────────"

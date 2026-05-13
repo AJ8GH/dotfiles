@@ -68,3 +68,7 @@ rmd() {
 free-space() {
   df -g / | awk 'NR==2 {print $4 " GB"}'
 }
+
+disk-space() {
+  diskutil info / | awk '/Free Space/ {print $4, $5}'
+}
