@@ -70,6 +70,19 @@ check      "jq"           "jq"      "jq --version"
 check      "curl"         "curl"    "curl --version"
 check      "aws"          "aws"     "aws --version"
 check      "zsh"          "zsh"     "zsh --version"
+if [ -d "$HOME/.nvm" ]; then
+  NVM_VERSION=$(cat "$HOME/.nvm/package.json" 2>/dev/null | awk -F'"' '/"version"/{print $4; exit}')
+  printf "✅  %-20s %s\n" "nvm" "${NVM_VERSION:-installed}"
+else
+  printf "❌  %-20s not installed\n" "nvm"
+fi
+if [ -d "$HOME/.rvm" ]; then
+  RVM_VERSION=$(cat "$HOME/.rvm/VERSION" 2>/dev/null || echo "installed")
+  printf "✅  %-20s %s\n" "rvm" "$RVM_VERSION"
+else
+  printf "❌  %-20s not installed\n" "rvm"
+fi
+check      "bundle"       "$HOME/.rvm/gems/ruby-3.0.0/bin/bundle" "$HOME/.rvm/gems/ruby-3.0.0/bin/bundle --version"
 if [ -d "$HOME/.oh-my-zsh" ]; then
   OMZ_VERSION=$(cd "$HOME/.oh-my-zsh" && git log --oneline -1 2>/dev/null | awk '{print $1}' || echo "installed")
   printf "✅  %-20s %s\n" "oh-my-zsh" "$OMZ_VERSION"
@@ -105,7 +118,7 @@ echo ""
 
 echo "── System ──────────────────────────────────────────────"
 printf "✅  %-20s %s\n" "macOS" "$(sw_vers -productVersion)"
-printf "✅  %-20s %s\n" "Free space" "$(diskutil info / | awk '/Free Space/ {print $4, $5}')"
+printf "✅  %-20s %s\n" "Free space" "$(diskutil info / | awk '/Container Free Space/ {print $4, $5}')"
 printf "✅  %-20s %s\n" "RAM" "$(system_profiler SPHardwareDataType 2>/dev/null | awk '/Memory:/ {print $2, $3}')"
 echo ""
 

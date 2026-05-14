@@ -57,3 +57,7 @@ alias gpl='git pull'
 # Disk space
 alias cleanup="sh /Users/adamjonas/Projects/dotfiles/scripts/cleanup.sh"
 alias storage="sh /Users/adamjonas/Projects/dotfiles/scripts/storage-report.sh"
+alias health="sh /Users/adamjonas/Projects/dotfiles/scripts/health.sh"
+alias wifi="sh /Users/adamjonas/Projects/dotfiles/scripts/wifi.sh"
+alias nuke="sh /Users/adamjonas/Projects/dotfiles/scripts/nuke.sh"
+alias ports="sh /Users/adamjonas/Projects/dotfiles/scripts/ports.sh"
