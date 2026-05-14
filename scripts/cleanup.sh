@@ -83,7 +83,11 @@ BEFORE=$(free_space_bytes)
 clean "~/Library/Caches"   ~/Library/Caches
 clean "~/Library/Logs"     ~/Library/Logs
 clean "Trash"              ~/.Trash
-clean_file "IntelliJ error log" ~/java_error_in_idea.hprof
+while IFS= read -r hprof; do
+  clean_file "Java heap dump" "$hprof"
+done << HPROFEOF
+$(find ~ -maxdepth 1 -name "*.hprof" 2>/dev/null; find ~/Library/Logs ~/Projects -name "*.hprof" 2>/dev/null)
+HPROFEOF
 
 # ─────────────────────────────────────────────
 # Xcode

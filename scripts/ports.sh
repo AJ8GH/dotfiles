@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # ports.sh — Show what's running on which ports
 
 # ─────────────────────────────────────────────

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # wifi.sh — Network diagnostics
 
 # ─────────────────────────────────────────────
@@ -29,17 +29,20 @@ echo ""
 # ─────────────────────────────────────────────
 
 echo "── WiFi ────────────────────────────────────────────────"
-SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null | awk '/ SSID/ {print $2}')
-SIGNAL=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null | awk '/agrCtlRSSI/ {print $2}')
-NOISE=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null | awk '/agrCtlNoise/ {print $2}')
-CHANNEL=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null | awk '/channel/ {print $2}')
-TX_RATE=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null | awk '/lastTxRate/ {print $2}')
+WIFI_DATA=$(system_profiler SPAirPortDataType 2>/dev/null)
+SSID=$(networksetup -getairportnetwork en0 2>/dev/null | sed 's/Current Wi-Fi Network: //')
+STATUS=$(echo "$WIFI_DATA" | awk '/Status:/ {print $2; exit}')
+CHANNEL=$(echo "$WIFI_DATA" | awk '/Current Network Information:/{found=1} found && /Channel:/{print $2, $3; exit}')
+SIGNAL=$(echo "$WIFI_DATA" | awk '/Current Network Information:/{found=1} found && /Signal \/ Noise:/{print $4; exit}')
+NOISE=$(echo "$WIFI_DATA" | awk '/Current Network Information:/{found=1} found && /Signal \/ Noise:/{print $7; exit}')
+TX_RATE=$(echo "$WIFI_DATA" | awk '/Current Network Information:/{found=1} found && /Transmit Rate:/{print $3; exit}')
 
 printf "%-20s %s\n" "SSID:"    "${SSID:-unknown}"
+printf "%-20s %s\n" "Status:"  "${STATUS:-unknown}"
+printf "%-20s %s\n" "Channel:" "${CHANNEL:-unknown}"
 printf "%-20s %s dBm\n" "Signal:"  "${SIGNAL:-unknown}"
 printf "%-20s %s dBm\n" "Noise:"   "${NOISE:-unknown}"
-printf "%-20s %s\n" "Channel:"  "${CHANNEL:-unknown}"
-printf "%-20s %s Mbps\n" "TX Rate:"  "${TX_RATE:-unknown}"
+printf "%-20s %s Mbps\n" "TX Rate:" "${TX_RATE:-unknown}"
 echo ""
 
 # ─────────────────────────────────────────────
