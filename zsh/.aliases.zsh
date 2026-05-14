@@ -37,6 +37,7 @@ alias path='echo -e ${PATH//:/\\n}'
 # Network
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en0'
+alias speedtest="speedtest 2> >(grep -v '^\[error\]' >&2)"
 
 # Brew dependencies
 alias brewdeps='brew leaves | xargs brew deps --include-build --tree'
