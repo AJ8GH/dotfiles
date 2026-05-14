@@ -14,6 +14,31 @@ free_space_human() {
   diskutil info / | awk '/Free Space/ {print $4, $5}'
 }
 
+clean_file() {
+  local label=$1
+  local target=$2
+  if [ ! -f "$target" ]; then
+    return
+  fi
+  echo "Clearing $label..."
+  before=$(free_space_bytes)
+  rm -f "$target" 2>/dev/null
+  after=$(free_space_bytes)
+  freed=$(( (after - before) * 512 ))
+  if [ "$freed" -gt 0 ]; then
+    freed_human=$(echo "$freed" | awk '{
+      if ($1 >= 1073741824) printf "%.1f GB", $1/1073741824
+      else if ($1 >= 1048576) printf "%.1f MB", $1/1048576
+      else if ($1 >= 1024) printf "%.1f KB", $1/1024
+      else printf "%d B", $1
+    }')
+    echo "✓ Removed, freed $freed_human"
+  else
+    echo "✓ Removed, freed 0 B"
+  fi
+  echo ""
+}
+
 clean() {
   local label=$1
   local target=$2
@@ -58,6 +83,7 @@ BEFORE=$(free_space_bytes)
 clean "~/Library/Caches"   ~/Library/Caches
 clean "~/Library/Logs"     ~/Library/Logs
 clean "Trash"              ~/.Trash
+clean_file "IntelliJ error log" ~/java_error_in_idea.hprof
 
 # ─────────────────────────────────────────────
 # Xcode
