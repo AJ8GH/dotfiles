@@ -11,7 +11,7 @@ free_space_bytes() {
 }
 
 free_space_human() {
-  diskutil info / | awk '/Free Space/ {print $4, $5}'
+  diskutil info / | awk '/Container Free Space/ {print $4, $5}'
 }
 
 clean_file() {
@@ -88,6 +88,16 @@ while IFS= read -r hprof; do
 done << HPROFEOF
 $(find ~ -maxdepth 1 -name "*.hprof" 2>/dev/null; find ~/Library/Logs ~/Projects -name "*.hprof" 2>/dev/null)
 HPROFEOF
+
+# ─────────────────────────────────────────────
+# Downloads
+# ─────────────────────────────────────────────
+
+while IFS= read -r f; do
+  clean_file "Opera installer" "$f"
+done << OPERAEOF
+$(find ~/Downloads -maxdepth 1 -name "OperaSetup.zip*" 2>/dev/null)
+OPERAEOF
 
 # ─────────────────────────────────────────────
 # Xcode
